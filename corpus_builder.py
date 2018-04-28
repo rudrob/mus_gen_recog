@@ -44,7 +44,6 @@ def create_corpus():
         create_files_for_artist(artist, logfile)
     logfile.close()
 
-create_corpus()
 
 
 
