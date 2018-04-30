@@ -1,0 +1,423 @@
+
+ ---- SONG START --- 
+
+i wake up 
+[[ 0.02222712  0.01307854  0.08267425]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+we sail th
+[[ 0.53807127  0.39924663  0.37913948]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+i found a 
+[[ 0.11899793  0.44380075  0.03470427]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+enlight yo
+[[ 0.67286026  0.12959266  0.14397041]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+a long a y
+[[ 0.40496764  0.44889945  0.00226006]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+i took my 
+[[ 0.12464603  0.51792336  0.00600955]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+close your
+[[ 0.62198919  0.46668324  0.1280245 ]]
+===>[ 1.  0.  0.]
+--->[ 0.  1.  0.]
+PREDICTION INVALID
+ ---- SONG START --- 
+
+arent you 
+[[ 0.1743913   0.61319512  0.00132682]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+i wa born 
+[[ 0.66570276  0.24832197  0.22241507]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+te amo te 
+[[ 0.17449576  0.22807591  0.06037307]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+so shes in
+[[ 0.24219573  0.27516192  0.03901831]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+birth is a
+[[ 0.7455101   0.24259511  0.17141609]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+we belong 
+[[ 0.86225462  0.18963513  0.09361175]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+bury all y
+[[ 0.57518828  0.41630223  0.09405223]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+juste pour
+[[ 0.36646357  0.66207999  0.09632763]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+chorus rep
+[[  1.70243811e-03   7.04921025e-04   7.14408398e-01]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+if you eve
+[[ 0.24140376  0.55237162  0.03177206]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+for those 
+[[ 0.07176173  0.52459019  0.03504486]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+drake i am
+[[ 0.09359011  0.05828859  0.77432728]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+ive a cons
+[[ 0.43603969  0.22998381  0.23386006]]
+===>[ 1.  0.  0.]
+--->[ 0.  1.  0.]
+PREDICTION INVALID
+ ---- SONG START --- 
+
+woe to you
+[[ 0.69450939  0.17876463  0.05846136]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+got no pro
+[[ 0.14125304  0.1321277   0.60247374]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+verse 1 lo
+[[ 0.37669009  0.11849457  0.16307794]]
+===>[ 1.  0.  0.]
+--->[ 0.  0.  1.]
+PREDICTION INVALID
+ ---- SONG START --- 
+
+in the boo
+[[ 0.7668283   0.27882692  0.10993342]]
+===>[ 1.  0.  0.]
+--->[ 0.  1.  0.]
+PREDICTION INVALID
+ ---- SONG START --- 
+
+it like yo
+[[ 0.32055554  0.31527349  0.06361029]]
+===>[ 1.  0.  0.]
+--->[ 0.  1.  0.]
+PREDICTION INVALID
+ ---- SONG START --- 
+
+one and in
+[[ 0.04627241  0.04251391  0.5225988 ]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+here our s
+[[ 0.81309009  0.25531158  0.07493794]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+intro yo c
+[[ 0.29628024  0.06581987  0.44717109]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+hateful im
+[[ 0.68150961  0.33332643  0.20691182]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+i wa a lia
+[[ 0.2498989   0.2766138   0.02517292]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+barstool b
+[[ 0.54014033  0.45467961  0.28937519]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+ice cube w
+[[ 0.04443547  0.00618558  0.57429236]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+angel put 
+[[ 0.72850537  0.4845534   0.10505553]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+a he came 
+[[  1.21082431e-02   8.19840610e-01   8.13339488e-04]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+death be n
+[[ 0.69682962  0.19764641  0.27845088]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+ola ola la
+[[ 0.18977758  0.67193538  0.34681097]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+same bed b
+[[ 0.14563891  0.43032742  0.04059147]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+yall ready
+[[ 0.05127938  0.46280202  0.04044178]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+pray for b
+[[ 0.65263879  0.2914494   0.10057747]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+intro just
+[[ 0.00459638  0.00771813  0.1949171 ]]
+===>[ 0.  0.  1.]
+--->[ 0.  1.  0.]
+PREDICTION INVALID
+ ---- SONG START --- 
+
+she say sh
+[[ 0.04037102  0.0626566   0.17340522]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+yeah my wr
+[[ 0.01526849  0.14240706  0.41033769]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+chorus 2x 
+[[ 0.19434576  0.19866183  0.20797478]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+come on ru
+[[ 0.30377489  0.84088373  0.00950437]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+swizz beat
+[[ 0.01732128  0.01342186  0.38324326]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+when youre
+[[ 0.00768756  0.76416481  0.00561027]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+alejandro 
+[[ 0.13545424  0.73729682  0.05866033]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+verse and 
+[[ 0.14719862  0.01598915  0.1081717 ]]
+===>[ 1.  0.  0.]
+--->[ 0.  0.  1.]
+PREDICTION INVALID
+ ---- SONG START --- 
+
+noonahnah 
+[[ 0.04767533  0.12143896  0.30630618]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+six oclock
+[[ 0.74398595  0.0906318   0.03266704]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+intro movi
+[[ 0.04308064  0.00300481  0.30983678]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+i gave the
+[[ 0.72627205  0.19877245  0.15330987]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+rza wait h
+[[ 0.43094712  0.00368682  0.02152981]]
+===>[ 1.  0.  0.]
+--->[ 0.  0.  1.]
+PREDICTION INVALID
+ ---- SONG START --- 
+
+by moonlig
+[[ 0.86269277  0.17135176  0.05002216]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+comparison
+[[ 0.31976473  0.45582294  0.09702671]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+slayer cov
+[[ 0.82035685  0.3819122   0.15538581]]
+===>[ 1.  0.  0.]
+--->[ 1.  0.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+korn elect
+[[ 0.12024445  0.31318048  0.40826818]]
+===>[ 0.  0.  1.]
+--->[ 0.  0.  1.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+youre on t
+[[ 0.07701336  0.56387591  0.10918649]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+ariana gra
+[[ 0.1893249   0.90876591  0.26575452]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+ ---- SONG START --- 
+
+you think 
+[[ 0.23138598  0.25580949  0.05545365]]
+===>[ 0.  1.  0.]
+--->[ 0.  1.  0.]
+PREDICTION VALID
+VALID: 52
+INVALID: 8

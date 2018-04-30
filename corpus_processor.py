@@ -14,7 +14,7 @@ DIR_RAP = "./corpus/rap/"
 wordnet_lemmatizer = WordNetLemmatizer()
 
 def get_word_index(songs):
-    num_words = 1000
+    num_words = 2000
     tokenizer = Tokenizer()
     tokenizer.fit_on_texts(songs)
     word_index = {e: i for e, i in tokenizer.word_index.items() if i <= num_words}
@@ -32,6 +32,9 @@ def text_to_vector(text, word_index):
 
 
 def preproc_song(raw_song_text):
+    '''
+        Preprocesses song from raw textual version to tokenized and lemmatized version
+    '''
     raw_song_text = raw_song_text.lower()
     song_text = raw_song_text.strip()
     song_text = ''.join(c for c in song_text if c not in punctuation)
@@ -83,8 +86,8 @@ def get_samples(word_index, m_s, p_s, r_s):
     return samples_data, samples_labels, np.asarray(samples_data_numeric), np.asarray(samples_labels_numeric)
 
 
-
-
+def get_processed_song(song_text):
+    song = preproc_song(song_text)
 
 def get_processed_corpus():
     metal_song_names = listdir(DIR_METAL)
@@ -96,11 +99,19 @@ def get_processed_corpus():
     rap_songs = [preproc_song(open(DIR_RAP + song).read()) for song in rap_song_names]
 
     flat_list = [item for sublist in [metal_songs, pop_songs, rap_songs] for item in sublist]
+    '''
+    vectorizer = TfidfVectorizer(max_df=0.5)
+    X_train_counts = vectorizer.fit_transform(metal_songs)
+    id_to_word = {v: k for k, v in vectorizer.vocabulary_.items()}
+    print(id_to_word[100])
+    print(X_train_counts[100])
+    '''
+
 
     words_in_corpus = get_word_index(flat_list)
 
-    return get_samples(words_in_corpus, metal_songs, pop_songs, rap_songs)
+    return get_samples(words_in_corpus, metal_songs, pop_songs, rap_songs), words_in_corpus
 
-
+#get_processed_corpus()
 
 
