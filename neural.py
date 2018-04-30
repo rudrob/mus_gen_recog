@@ -28,25 +28,35 @@ def prediction_valid(actual, predicted):
 
 def model():
     data_bundle, word_index = get_processed_corpus()
+
+    ''' print words sorted by commonality
+    words = [0 for x in range(2001)]
+    for z in word_index:
+        words[word_index[z]] = z
+    print(words)
+    '''
+
     d, l, data, labels = data_bundle[0], data_bundle[1], data_bundle[2], data_bundle[3]
-    border = int(len(data) * 0.7)
-    border2 = int(len(data) * 0.9)
+    border = int(len(data) * 0.65)
+    border2 = int(len(data) * 0.8)
     training_set, training_labels = data[:border], labels[:border]
     test_set, test_labels = data[border:border2], labels[border:border2]
 
-    rest_s, rest_l = data[border2:], labels[border2:]
-    rest_s_normal, rest_l_normal = d[border2:], labels[border2:]
-
+    rest_s, rest_l = data[border2:border2 + 200], labels[border2:border2 + 200]
+    rest_s_normal, rest_l_normal = d[border2:border2 + 200], labels[border2:border2 + 200]
+    print("Training set len: ", len(training_set))
+    print("Testing set len: ", len(test_set))
+    print("Rest len: ", len(rest_s))
     model = None
     if LOAD_MODEL_FROM_FILE:
         model = models.load_model('mymodel.h5')
     else:
         model = models.Sequential()
-        model.add(layers.Dense(64, activation='relu', input_shape=(2000,)))
+        model.add(layers.Dense(64, activation='relu', input_shape=(2500,)))
         model.add(layers.Dense(64, activation='relu'))
         model.add(layers.Dense(3, activation='sigmoid'))
         model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
-        model.fit(training_set, training_labels, epochs=4, batch_size=512)
+        model.fit(training_set, training_labels, epochs=5, batch_size=512)
         model.save('mymodel.h5')
 
 
@@ -79,14 +89,15 @@ def model():
                 invalid += 1
         wr.write("\nVALID: " + str(valid))
         wr.write("\nINVALID: " + str(invalid))
+        wr.write("\nVALID PERCENT: " + str(100*(valid/(valid + invalid))))
     else:
         test_song_text = open(TEST_SONG_FROM_FILE_NAME).read()
         test_song_text = preproc_song(test_song_text)
-        numeric = sample_to_numeric(test_song_text, "metal", word_index)
+        numeric = sample_to_numeric(test_song_text, "pop", word_index)
         prediction = model.predict(np.asarray([numeric[0]]))
         prediction = prediction_modify(prediction[0])
         print("Predicted: ", numeric_prediction_to_textual(prediction))
-        print("Expected: ", numeric_prediction_to_textual(numeric[1]))
+
 
 
 model()

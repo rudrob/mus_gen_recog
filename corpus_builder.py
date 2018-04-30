@@ -5,7 +5,7 @@ from corpus_artists import artists_genres
 
 BASE_SONG_URL = "http://www.tekstowo.pl/piosenka,"
 BASE_ARTIST_URL = "http://www.tekstowo.pl/piosenki_artysty,"
-SONGS_PER_ARTIST = 10
+SONGS_PER_ARTIST = 15
 DELAY_BETWEEN_EACH_SONG_DL = 1
 
 
@@ -43,6 +43,8 @@ def create_corpus():
     for artist in artists_genres.keys():
         create_files_for_artist(artist, logfile)
     logfile.close()
+
+
 
 
 

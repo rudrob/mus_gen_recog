@@ -7,22 +7,48 @@ from keras.preprocessing.text import Tokenizer
 import numpy as np
 import random
 from nltk.stem import WordNetLemmatizer
+from math import log
+from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
 
 DIR_METAL = "./corpus/metal/"
 DIR_POP = "./corpus/pop/"
 DIR_RAP = "./corpus/rap/"
 wordnet_lemmatizer = WordNetLemmatizer()
 
+def idf_mapping(flat_list):
+    mapping = {}
+    no_of_songs = len(flat_list)
+    for song in flat_list:
+        for word in set(word_tokenize(song)):
+            if word not in mapping:
+                mapping[word] = 1
+            else:
+                mapping[word] += 1
+    for word in mapping:
+        mapping[word] = log(no_of_songs/mapping[word])
+
 def get_word_index(songs):
-    num_words = 2000
+    '''
+        word_index is dict of type {'word' : mapping_to_index_according_to_commonality, ... }
+    '''
+    num_words = 2500
+    del_most_common = 5
     tokenizer = Tokenizer()
     tokenizer.fit_on_texts(songs)
-    word_index = {e: i for e, i in tokenizer.word_index.items() if i <= num_words}
+    word_index = {e: i for e, i in tokenizer.word_index.items()
+                  if i <= num_words + del_most_common }
+    #deleting most common words
+    word_index = {k: v for k, v in word_index.items() if v > del_most_common}
+    for k in word_index:
+        word_index[k] -= del_most_common
     #sequences = tokenizer.texts_to_sequences(songs)
     #one_hot_results = tokenizer.texts_to_matrix(songs, mode='binary')
     return word_index
 
 def text_to_vector(text, word_index):
+    '''
+        converts text into numpy vector according to word_index
+    '''
     vec = np.zeros(len(word_index))
     for word in word_tokenize(text):
         if word in word_index:
@@ -70,24 +96,30 @@ def get_samples(word_index, m_s, p_s, r_s):
 
     samples_data = []
     samples_labels = []
-    samples_data_numeric = []
-    samples_labels_numeric = []
+
     indices = [x for x in range(all_len)]
     random.shuffle(indices)
     for index in indices:
         samples_data.append(flat_list[index])
         samples_labels.append(index_mapping(index))
+    numeric_samples = textual_samples_to_numeric_samples(samples_data, samples_labels, word_index)
+
+    return samples_data, samples_labels, numeric_samples[0], numeric_samples[1]
+
+def textual_samples_to_numeric_samples(samples_data, samples_labels, word_index):
+    '''
+        Takes in textual samples and labels, and word index and
+        return those samples in numeric form
+    '''
+    samples_data_numeric = []
+    samples_labels_numeric = []
     for i in range(len(samples_data)):
         numeric = sample_to_numeric(samples_data[i],
                                     samples_labels[i],
                                     word_index)
         samples_data_numeric.append(numeric[0])
         samples_labels_numeric.append(numeric[1])
-    return samples_data, samples_labels, np.asarray(samples_data_numeric), np.asarray(samples_labels_numeric)
-
-
-def get_processed_song(song_text):
-    song = preproc_song(song_text)
+    return np.asarray(samples_data_numeric), np.asarray(samples_labels_numeric)
 
 def get_processed_corpus():
     metal_song_names = listdir(DIR_METAL)
@@ -99,19 +131,12 @@ def get_processed_corpus():
     rap_songs = [preproc_song(open(DIR_RAP + song).read()) for song in rap_song_names]
 
     flat_list = [item for sublist in [metal_songs, pop_songs, rap_songs] for item in sublist]
-    '''
-    vectorizer = TfidfVectorizer(max_df=0.5)
-    X_train_counts = vectorizer.fit_transform(metal_songs)
-    id_to_word = {v: k for k, v in vectorizer.vocabulary_.items()}
-    print(id_to_word[100])
-    print(X_train_counts[100])
-    '''
-
+    print(idf_mapping(flat_list))
 
     words_in_corpus = get_word_index(flat_list)
 
     return get_samples(words_in_corpus, metal_songs, pop_songs, rap_songs), words_in_corpus
 
-#get_processed_corpus()
+
 
 
