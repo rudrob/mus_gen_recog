@@ -3,6 +3,7 @@ from corpus_processor import get_processed_corpus, preproc_song, sample_to_numer
 import numpy as np
 from config import *
 
+
 def prediction_modify(pred):
     pred_mod = np.zeros(len(pred))
     indmax = 0
@@ -12,6 +13,7 @@ def prediction_modify(pred):
     pred_mod[indmax] = 1.0
     return pred_mod
 
+
 def numeric_prediction_to_textual(pred):
     if pred[0] == 1:
         return "metal"
@@ -20,13 +22,24 @@ def numeric_prediction_to_textual(pred):
     elif pred[2] == 1:
         return "rap"
 
+
 def prediction_valid(actual, predicted):
     for i in range(len(actual)):
         if actual[i] != predicted[i]:
             return False
     return True
 
-def model():
+
+def get_model():
+    model = models.Sequential()
+    model.add(layers.Dense(64, activation='relu', input_shape=(INPUT_SHAPE,)))
+    model.add(layers.Dense(64, activation='relu'))
+    model.add(layers.Dense(3, activation='sigmoid'))
+    model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
+    return model
+
+
+def main():
     data_bundle, word_index = get_processed_corpus()
 
     ''' print words sorted by commonality
@@ -51,25 +64,18 @@ def model():
     if LOAD_MODEL_FROM_FILE:
         model = models.load_model('mymodel.h5')
     else:
-        model = models.Sequential()
-        model.add(layers.Dense(64, activation='relu', input_shape=(2500,)))
-        model.add(layers.Dense(64, activation='relu'))
-        model.add(layers.Dense(3, activation='sigmoid'))
-        model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['accuracy'])
-        model.fit(training_set, training_labels, epochs=5, batch_size=512)
+        model = get_model()
+        model.fit(training_set, training_labels, epochs=EPOCHS_NO, batch_size=BATCH_SIZE)
         model.save('mymodel.h5')
 
-
-
-    ###########################
 
     if not TEST_SONG_FROM_FILE:
         valid = 0
         invalid = 0
 
-        wr = open("spr.txt", "w+")
+        wr = open("other/spr.txt", "w+")
         results = model.evaluate(test_set, test_labels)
-        #wr.write(str(results))
+        # wr.write(str(results))
         for i in range(len(rest_s)):
             wr.write("\n ---- SONG START --- \n")
             wr.write("\n" + rest_s_normal[i][:10])
@@ -79,9 +85,7 @@ def model():
             wr.write("\n===>" + str(prediction))
             wr.write("\n--->" + str(rest_l_normal[i]))
 
-
-
-            if(prediction_valid(rest_l[i], prediction)):
+            if (prediction_valid(rest_l[i], prediction)):
                 wr.write("\nPREDICTION VALID")
                 valid += 1
             else:
@@ -89,7 +93,7 @@ def model():
                 invalid += 1
         wr.write("\nVALID: " + str(valid))
         wr.write("\nINVALID: " + str(invalid))
-        wr.write("\nVALID PERCENT: " + str(100*(valid/(valid + invalid))))
+        wr.write("\nVALID PERCENT: " + str(100 * (valid / (valid + invalid))))
     else:
         test_song_text = open(TEST_SONG_FROM_FILE_NAME).read()
         test_song_text = preproc_song(test_song_text)
@@ -99,5 +103,4 @@ def model():
         print("Predicted: ", numeric_prediction_to_textual(prediction))
 
 
-
-model()
+main()

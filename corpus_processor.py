@@ -9,11 +9,13 @@ import random
 from nltk.stem import WordNetLemmatizer
 from math import log
 from sklearn.feature_extraction.text import TfidfTransformer, CountVectorizer
+from config import *
 
 DIR_METAL = "./corpus/metal/"
 DIR_POP = "./corpus/pop/"
 DIR_RAP = "./corpus/rap/"
 wordnet_lemmatizer = WordNetLemmatizer()
+idf = None
 
 def idf_mapping(flat_list):
     mapping = {}
@@ -26,13 +28,14 @@ def idf_mapping(flat_list):
                 mapping[word] += 1
     for word in mapping:
         mapping[word] = log(no_of_songs/mapping[word])
+    return mapping
 
 def get_word_index(songs):
     '''
         word_index is dict of type {'word' : mapping_to_index_according_to_commonality, ... }
     '''
-    num_words = 2500
-    del_most_common = 5
+    num_words = INPUT_SHAPE
+    del_most_common = DEL_MOST_COMMON
     tokenizer = Tokenizer()
     tokenizer.fit_on_texts(songs)
     word_index = {e: i for e, i in tokenizer.word_index.items()
@@ -131,7 +134,8 @@ def get_processed_corpus():
     rap_songs = [preproc_song(open(DIR_RAP + song).read()) for song in rap_song_names]
 
     flat_list = [item for sublist in [metal_songs, pop_songs, rap_songs] for item in sublist]
-    print(idf_mapping(flat_list))
+    global idf
+    idf = idf_mapping(flat_list)
 
     words_in_corpus = get_word_index(flat_list)
 

@@ -1,4 +1,10 @@
 
 LOAD_MODEL_FROM_FILE = True
 TEST_SONG_FROM_FILE = False
-TEST_SONG_FROM_FILE_NAME = "inputsong.txt"
+TEST_SONG_FROM_FILE_NAME = "other/inputsong.txt"
+
+#only for new model
+INPUT_SHAPE = 2500
+DEL_MOST_COMMON = 5
+EPOCHS_NO = 5
+BATCH_SIZE = 512
